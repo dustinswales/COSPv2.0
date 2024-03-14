@@ -102,6 +102,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install intel-hpckit-getting-started intel-oneapi-clck intel-oneapi-common-licensing intel-oneapi-common-vars
         sudo apt-get install intel-oneapi-dev-utilities  intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic intel-oneapi-compiler-fortran intel-oneapi-itac
+        command -v ifort
 
     #
     # Nvidia compilers
