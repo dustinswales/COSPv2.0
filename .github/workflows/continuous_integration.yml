@@ -74,7 +74,23 @@ jobs:
     - name: Install NetCDF library
       run: |
         sudo apt-get update
-        sudo apt-get install libnetcdff-dev
+        sudo apt-get install libnetcdff-dev libhdf5-dev
+
+
+    - name: Acquire Google access token
+      id: google-access-token
+      uses: playeveryware/action-google-access-token@v1
+      with:
+        credentials: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS }}
+        scope: 'https://www.googleapis.com/auth/drive.readonly'
+
+    - name: Download file
+      uses: playeveryware/action-google-drive-download@v1
+      with:
+        token: ${{ steps.google-access-token.outputs.token }}
+        file-id: 1dBaBS2J5WWwygqWmaCCUC0R49QHJNboH
+        path: rttov132.tar.xz
+	  
 
     ###############################################################################
     # Build COSP and retrieve input and test files
