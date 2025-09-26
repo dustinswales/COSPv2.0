@@ -90,7 +90,6 @@ jobs:
         token: ${{ steps.google-access-token.outputs.token }}
         file-id: 1dBaBS2J5WWwygqWmaCCUC0R49QHJNboH
         path: rttov132.tar.xz
-	  
 
     ###############################################################################
     # Build COSP and retrieve input and test files
